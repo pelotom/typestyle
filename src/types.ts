@@ -2831,6 +2831,7 @@ export type CSSTypeProperties = CSS.StandardProperties & CSS.VendorPropertiesHyp
 export type Ignore =
   | '$unique' // internal to TypeStyle
   | 'maxFontSize' // deprecated
+  | 'rx' | 'ry' // not valid CSS properties
   ;
 
 export type Missing = Exclude<keyof CSSProperties, Ignore | keyof CSSTypeProperties>;
