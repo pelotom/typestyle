@@ -2826,7 +2826,7 @@ export interface KeyFrames {
 
 import * as CSS from 'csstype';
 
-export type CSSTypeProperties = CSS.StandardProperties & CSS.VendorPropertiesHyphen;
+export type CSSTypeProperties = CSS.StandardProperties & CSS.SvgProperties & CSS.VendorPropertiesHyphen;
 
 export type Ignore =
   | '$unique' // internal to TypeStyle
