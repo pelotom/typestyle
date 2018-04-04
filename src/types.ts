@@ -2826,10 +2826,11 @@ export interface KeyFrames {
 
 import * as CSS from 'csstype';
 
-export type CSSTypeProperties = CSS.StandardProperties & CSS.VendorPropertiesHyphen
+export type CSSTypeProperties = CSS.StandardProperties & CSS.VendorPropertiesHyphen;
 
 export type Ignore =
   | '$unique' // internal to TypeStyle
   | 'maxFontSize' // deprecated
+  ;
 
-export type Missing = Exclude<keyof CSSProperties, Ignore | keyof CSSTypeProperties>
+export type Missing = Exclude<keyof CSSProperties, Ignore | keyof CSSTypeProperties>;
