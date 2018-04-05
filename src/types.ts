@@ -2832,6 +2832,8 @@ export type Ignore =
   | '$unique' // internal to TypeStyle
   | 'maxFontSize' // deprecated
   | 'rx' | 'ry' // not valid CSS properties
+  | 'src' | 'unicodeRange' // Only valid within @font-face?
+  | 'zoom' // Non-standard according to https://developer.mozilla.org/en-US/docs/Web/CSS/zoom
 
   // ===========================================================================
   // TypeStyle comments indicate obsolete
@@ -2849,7 +2851,6 @@ export type Ignore =
   | 'textUnderlineStyle' // After review this should be replaced by text-decoration should it not?
   | 'whiteSpaceTreatment' // Obsolete: unsupported.
   | 'wrapOption' // Obsolete and unsupported. Do not use.
-  | 'zoom' // Non-standard according to https://developer.mozilla.org/en-US/docs/Web/CSS/zoom
 
   // ===========================================================================
   // Non-standard and Obsolete CSS Properties
@@ -3226,15 +3227,6 @@ export type Ignore =
                                // and the entire spec is at risk. still, i'm taking
                                // it out of illegal and simply not highlighting it
                                // for now
-
-  // ===========================================================================
-  // Misc exclusions
-  // ===========================================================================
-
-  // Only valid within @font-face?
-  | 'src'
-  | 'unicodeRange'
-
   ;
 
 export type MissingProperties = Exclude<keyof CSSProperties, Ignore | keyof CSSTypeProperties>;
