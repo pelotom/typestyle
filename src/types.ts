@@ -2832,8 +2832,8 @@ export type Ignore =
   | '$unique' // internal to TypeStyle
   | 'maxFontSize' // deprecated
   | 'rx' | 'ry' // not valid CSS properties
-  | 'src' | 'unicodeRange' // Only valid within @font-face?
-  | 'zoom' // Non-standard according to https://developer.mozilla.org/en-US/docs/Web/CSS/zoom
+  | 'src' | 'unicodeRange' // only valid within @font-face?
+  | 'zoom' // only valid within @viewport?
 
   // ===========================================================================
   // TypeStyle comments indicate obsolete
