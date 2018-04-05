@@ -2834,7 +2834,26 @@ export type Ignore =
   | 'rx' | 'ry' // not valid CSS properties
 
   // ===========================================================================
-  // Non-standard and Obsolete CSS Properties (from )
+  // TypeStyle comments indicate obsolete
+  // ===========================================================================
+
+  | 'boxLineProgression' // Do not use. This property has been replaced by the flex-wrap property.
+  | 'flexAlign' // Obsolete, do not use. This property has been renamed to align-items.
+  | 'flexItemAlign' // Do not use. This property has been renamed to align-self
+  | 'flexLinePack' // Do not use. This property has been renamed to align-content.
+  | 'punctuationTrim' // Obsolete: unsupported.
+  | 'textLineThroughColor' // Considered obsolete; use text-decoration-color instead.
+  | 'textLineThroughMode' // Considered obsolete; use text-decoration-skip instead.
+  | 'textLineThroughStyle' // Considered obsolete; use text-decoration-style instead.
+  | 'textScript' // Obsolete: unsupported.
+  | 'textUnderlineStyle' // After review this should be replaced by text-decoration should it not?
+  | 'whiteSpaceTreatment' // Obsolete: unsupported.
+  | 'wrapOption' // Obsolete and unsupported. Do not use.
+  | 'zoom' // Non-standard according to https://developer.mozilla.org/en-US/docs/Web/CSS/zoom
+
+  // ===========================================================================
+  // Non-standard and Obsolete CSS Properties
+  // (according to https://gist.github.com/y0ssar1an/bb95223148e486acbe7a)
   // ===========================================================================
 
   // OBSOLETE PREFIXES
@@ -3204,9 +3223,18 @@ export type Ignore =
   | '-epub-writing-mode'
   | '-moz-text-size-adjust'    // text-size-adjust only implemented in mobile safari,
   | '-webkit-text-size-adjust' // where it's buggy. property is "at risk" in the spec
-                              // and the entire spec is at risk. still, i'm taking
-                              // it out of illegal and simply not highlighting it
-                              // for now
+                               // and the entire spec is at risk. still, i'm taking
+                               // it out of illegal and simply not highlighting it
+                               // for now
+
+  // ===========================================================================
+  // Misc exclusions
+  // ===========================================================================
+
+  // Only valid within @font-face?
+  | 'src'
+  | 'unicodeRange'
+
   ;
 
 export type MissingProperties = Exclude<keyof CSSProperties, Ignore | keyof CSSTypeProperties>;
