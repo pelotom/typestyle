@@ -2,7 +2,7 @@
  * Value of a CSS Property.  Could be a single value or a list of fallbacks
  * NOTE: array is for fallbacks
  */
-export type CSSValue<T> = T | T[];
+export type CSSValue<T> = T;
 
 /**
  * For general purpose CSS values
@@ -2826,7 +2826,10 @@ export interface KeyFrames {
 
 import * as CSS from 'csstype';
 
-export type CSSTypeProperties = CSS.StandardProperties & CSS.SvgProperties & CSS.VendorPropertiesHyphen;
+export type CSSTypePropertiesBase<T> = CSS.StandardProperties<T> & CSS.SvgProperties<T> & CSS.VendorPropertiesHyphen<T>;
+export type CSSTypeProperties = {
+  [K in keyof CSSTypePropertiesBase<any>]?: CSSValue<CSSTypePropertiesBase<number | string>[K]>;
+}
 
 export type Ignore =
   | '$unique' // internal to TypeStyle
@@ -3234,3 +3237,9 @@ export type MissingProperties = Exclude<keyof CSSProperties, Ignore | keyof CSST
 export type Missing = {
   [K in MissingProperties]: CSSProperties[K];
 };
+
+export type OverlappingProperties = Extract<keyof CSSProperties, keyof CSSTypeProperties>;
+
+export type MissingValues = {
+  [K in OverlappingProperties]: Exclude<CSSProperties[K], CSSTypeProperties[K]>;
+}
