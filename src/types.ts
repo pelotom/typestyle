@@ -2828,7 +2828,7 @@ import * as CSS from 'csstype';
 
 export type CSSTypePropertiesBase<T> = CSS.StandardProperties<T> & CSS.SvgProperties<T> & CSS.VendorPropertiesHyphen<T>;
 export type CSSTypeProperties = {
-  [K in keyof CSSTypePropertiesBase<any>]?: CSSValue<CSSTypePropertiesBase<number | string>[K]>;
+  [K in keyof CSSTypePropertiesBase<any>]?: CSSValue<CSSTypePropertiesBase<CSSValueGeneral>[K]>;
 }
 
 export type Ignore =
