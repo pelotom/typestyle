@@ -2826,7 +2826,7 @@ export interface KeyFrames {
 
 import * as CSS from 'csstype';
 
-export type CSSTypePropertiesBase<T> = CSS.StandardProperties<T> & CSS.SvgProperties<T> & CSS.VendorPropertiesHyphen<T>;
+export type CSSTypePropertiesBase<T> = CSS.StandardProperties<T> & CSS.SvgProperties<T> & CSS.VendorPropertiesHyphen<T> & CSS.ObsoleteProperties<T>;
 export type CSSTypeProperties = {
   [K in keyof CSSTypePropertiesBase<any>]?: CSSValue<CSSTypePropertiesBase<CSSValueGeneral>[K]>;
 }
