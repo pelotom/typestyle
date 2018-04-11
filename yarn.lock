@@ -531,9 +531,9 @@ crypto-browserify@^3.11.0:
     randombytes "^2.0.0"
     randomfill "^1.0.3"
 
-csstype@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.1.1.tgz#37b01a7a9958ef0b88167ff6678deccd732e0ae2"
+csstype@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-2.2.0.tgz#1656ef97553ac53b77090844a2531c6660ebd902"
 
 d@1:
   version "1.0.0"
