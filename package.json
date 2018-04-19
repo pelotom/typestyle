@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/typestyle/typestyle#readme",
   "dependencies": {
-    "csstype": "^2.2.0",
+    "csstype": "^2.3.0",
     "free-style": "2.5.1"
   },
   "devDependencies": {

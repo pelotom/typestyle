@@ -3240,6 +3240,14 @@ export type Missing = {
 
 export type OverlappingProperties = Extract<keyof CSSProperties, keyof CSSTypeProperties>;
 
-export type MissingValues = {
+export type MissingValuesRec = {
   [K in OverlappingProperties]: Exclude<CSSProperties[K], CSSTypeProperties[K]>;
+}
+
+export type MissingValuesKeys = {
+  [K in keyof MissingValuesRec]: MissingValuesRec[K] extends never ? never : K
+}[keyof MissingValuesRec]
+
+export type MissingValues = {
+  [K in MissingValuesKeys]: MissingValuesRec[K]
 }
